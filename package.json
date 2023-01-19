@@ -1,9 +1,13 @@
 {
   "name": "sibclass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "ts:js": "tsc --outDir .",
+    "ts:defs": "tsc --declaration --outDir . --emitDeclarationOnly",
+    "prepublishOnly": "yarn ts:js && yarn ts:defs",
+    "postpublish": "rm -r *.d.ts dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
